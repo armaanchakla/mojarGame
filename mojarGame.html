@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mojar Game</title>
+  </head>
+  <body>
+    <button type="button" id="btn_click" onclick="updateScore()">Click Me</button>
+    <h1 id="score">0</h1>
+
+    <h1 id="winMsg">You Win!</h1>
+    <button type="button" id="btn_play" onclick="resetPlay()">Play Again</button>
+
+    <script>
+      document.getElementById('winMsg').style.display = 'none';
+      document.getElementById('btn_play').style.display = 'none';
+
+      function updateScore() {
+        var x = document.getElementById('score').innerHTML;
+        x++;
+        document.getElementById('score').innerHTML = x;
+
+        if (x == 10) {
+          document.getElementById('btn_click').style.display = 'none';
+          document.getElementById('score').style.display = 'none';
+          document.getElementById('winMsg').style.display = 'block';
+          document.getElementById('btn_play').style.display = 'block';
+        }
+      }
+
+      function resetPlay() {
+        document.getElementById('score').innerHTML = 0;
+
+        document.getElementById('btn_click').style.display = 'block';
+        document.getElementById('score').style.display = 'block';
+        document.getElementById('winMsg').style.display = 'none';
+        document.getElementById('btn_play').style.display = 'none';
+      }
+
+    </script>
+
+  </body>
+</html>
